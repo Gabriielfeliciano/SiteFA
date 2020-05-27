@@ -7,7 +7,7 @@ include 'include/ver_orc.php';
 <!DOCTYPE html>
 <html class="ls-theme-indigo">
   <head>
-    <title>Orçamentos</title>
+    <title>Feliciano Associados - Orçamentos</title>
 
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -59,7 +59,7 @@ $(document).ready(function() {
       buttons: [
         { extend: 'copy', className: 'ls-btn' },
         { extend: 'csv', className: 'ls-btn' },
-        { extend: 'pdf', className: 'ls-btn-pdf', orientation: 'landscape',  pageSize: 'A4', filename:'Feliciano Associados - Funcionários'+d, title:' ',exportOptions: {columns: [0, 1, 2] },},
+        { extend: 'pdf', className: 'ls-btn-pdf', orientation: 'landscape',  pageSize: 'A4', filename:'Feliciano Associados - Orcamentos'+d, title:' ',exportOptions: {columns: [0, 1, 2] },},
         { extend: 'print', className: 'ls-btn' },            
           ],
 

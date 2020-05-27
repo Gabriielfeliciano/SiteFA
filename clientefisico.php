@@ -8,7 +8,7 @@ include 'include/ver_cf.php';
 <!DOCTYPE html>
 <html class="ls-theme-indigo">
   <head>
-    <title>Clientes Físicos</title>
+    <title>Feliciano Associados - Clientes Físicos</title>
 
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -58,7 +58,7 @@ $(document).ready(function() {
       buttons: [
         { extend: 'copy', className: 'ls-btn' },
         { extend: 'csv', className: 'ls-btn' },
-        { extend: 'pdf', className: 'ls-btn-pdf', orientation: 'landscape',  pageSize: 'A4', filename:'Feliciano Associados - Funcionários'+d, title:' ',exportOptions: {columns: [0, 1, 2] },},
+        { extend: 'pdf', className: 'ls-btn-pdf', orientation: 'landscape',  pageSize: 'A4', filename:'Feliciano Associados - Clientes Físicos'+d, title:' ',exportOptions: {columns: [0, 1, 2] },},
         { extend: 'print', className: 'ls-btn' },            
           ],
 

@@ -5,14 +5,14 @@ if($_SESSION['tipoCliente'] == 1){
     $nome = $_SESSION['nome'];
     $sobrenome = $_SESSION['sobrenome'];
     $ident = $nome . " " . $sobrenome;
-} else if ($_SESSION['tipoCliente'] == 2){
+} else {
     $ident = $_SESSION['nome'];
 }
 
 // cria a instrução SQL que vai selecionar os dados
 if ($_SESSION['tipoCliente'] == 3){
     
-    $query = sprintf("SELECT * FROM relatoriofunc");
+    $query = sprintf("SELECT * FROM relatoriocliente WHERE destinatario = '$ident' ");
     
 } else if ($_SESSION['tipoCliente'] == 1 or $_SESSION['tipoCliente'] == 2){
 
@@ -20,9 +20,9 @@ if ($_SESSION['tipoCliente'] == 3){
 
 } else if ($_SESSION['tipoCliente'] == 4){
 
-    $query = sprintf("SELECT * FROM relatoriocliente");
+    $query = sprintf("SELECT * FROM relatoriocliente WHERE destinatario = '$ident' ");
 
-    $query2 = sprintf("SELECT * FROM relatoriofunc");
+    $query2 = sprintf("SELECT * FROM relatoriofunc WHERE destinatario = '$ident' ");
     $dados2 = mysqli_query($conn,$query2) or die(mysqli_error());
     $total_func = mysqli_num_rows($dados2);
 }
