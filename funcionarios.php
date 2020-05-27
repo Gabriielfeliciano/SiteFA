@@ -8,7 +8,7 @@ if ($_SESSION['tipoCliente'] == 4) {
 <!DOCTYPE html>
 <html class="ls-theme-indigo">
   <head>
-    <title>Funcionários</title>
+    <title>Feliciano Associados - Funcionários</title>
 
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
