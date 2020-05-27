@@ -1,0 +1,19 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.btn {
+    border: 1px solid #fff;
+    cursor: pointer;
+    margin-top: -0.4%;
+    padding: 3.1999%;
+    border-radius: 5px;
+    width: 16.8%;
+    background-color: rgba(49, 173, 24, 0.74);
+}
+
+.btn:hover {
+    background-color: rgba(38, 145, 16, 0.753);
+    border-radius: 5px;
+}
