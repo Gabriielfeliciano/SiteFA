@@ -13,8 +13,6 @@ $linhalog = mysqli_fetch_assoc($dadoslog);
 // calcula quantos dados retornaram
 $total_log = mysqli_num_rows($dadoslog);
 
-$cont = 0;
-
 $z = 0;
 
 if ($total_log > 0){

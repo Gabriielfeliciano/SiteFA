@@ -133,7 +133,7 @@ $(document).ready(function() {
         
         <form action="include/validar_orc.php" method="POST" enctype="multiparty/form-data">
         <input type="hidden" name="idOrcamento" id="idOrcamento" value=<?=$linha['idOrcamento']?>> 
-        <button type="submit" class="btn ls-ico-checkmark espacobtn" title="Validar"></button>
+        <button type="submit" class="ls-btn-success ls-ico-checkmark espacobtn" title="Validar"></button>
         </form>
         <form action="visualizar_orc.php" method="POST" enctype="multiparty/form-data">
         <input type="hidden" name="idOrcamento" id="idOrcamento" value=<?=$linha['idOrcamento']?>> 

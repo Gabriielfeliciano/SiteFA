@@ -15,7 +15,7 @@
             <ul>
               <li><a href="cadastro_relatorio_cliente.php">Novo</a></li>
               <li><a href="relatorios_clientes.php">Enviados</a></li>
-              <li><a href="relatorios_func.php">Recebidos</a></li>
+              <li><a href="index_relatorio.php">Recebidos</a></li>
             </ul>
           </li>
 
@@ -42,7 +42,7 @@
           <ul>
             <li><a href="cadastro_relatorio_func.php">Novo</a></li>
             <li><a href="relatorios_func.php" >Enviados</a></li>
-            <li><a href="relatorios_clientes.php" >Recebidos</a></li>
+            <li><a href="index_relatorio.php" >Recebidos</a></li>
           </ul>
         </li>
 

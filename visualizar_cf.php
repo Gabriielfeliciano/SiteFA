@@ -63,13 +63,19 @@ $total = mysqli_num_rows($dados);
 
   <form action="" class="ls-form ls-form-text ls-form ls-form-disable" data-ls-module="form">
     <label class="ls-label col-md-3">
-      <b class="ls-label-text">CPF:</b>      
-      <input type="text" name="" id="nome" value=<?=$linha['cpf']?>>
+      <b class="ls-label-text">CPF:</b>
+      <?php $nome = $linha['nome']; $sobrenome = $linha['sobrenome']?>      
+      <input type="text" name="" id="" value="<?=$nome .  $sobrenome?>">
     </label>
 
     <label class="ls-label col-md-3">
       <b class="ls-label-text">E-mail:</b>      
       <input type="text" name="" id="email" value=<?=$linha['email']?>>
+    </label>
+
+    <label class="ls-label col-md-3">
+      <b class="ls-label-text">Endereço:</b>      
+      <input type="text" name="" id="" value="<?=$linha['endereco']?>">
     </label>
 
     <label class="ls-label col-md-2">

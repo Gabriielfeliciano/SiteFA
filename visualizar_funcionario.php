@@ -64,7 +64,7 @@ $total = mysqli_num_rows($dados);
   <form action="" class="ls-form ls-form-text ls-form ls-form-disable" data-ls-module="form">
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Nome</b>      
-      <input type="text" name="" id="nome" value=<?=$linha['nome']?>>
+      <input type="text" name="" id="nome" value="<?=$linha['nome']?>">
     </label>
 
     <label class="ls-label col-md-3">
@@ -79,8 +79,7 @@ $total = mysqli_num_rows($dados);
 
     <label class="ls-label col-md-10">
       <b class="ls-label-text">Endereço</b>
-      <textarea placeholder="R. Pedro Borges,75 - Centro,Fortaleza-CE" 
-      maxlength="100"><?=$linha['endereco']?></textarea>
+      <input type="text" id="telefone" name="" value="<?=$linha['endereco']?>">
     </label>
 
     <label class="ls-label col-md-2">
@@ -97,10 +96,16 @@ $total = mysqli_num_rows($dados);
 
     <label class="ls-label col-md-2">
       <b class="ls-label-text">Setor</b>
-      <input type="text" name="" id="setor" value=<?=$linha['setor']?>>
+      <input type="text" name="" id="setor" value="<?=$linha['setor']?>">
     </label>
 </form>
-    </main>
+
+  <div class="ls-actions-btn">
+  <br><br>
+    <a href="funcionarios.php"><button class="ls-btn ls-ico-chevron-left">Voltar</button></a>
+  </div>
+  
+  </main>
 
    
 

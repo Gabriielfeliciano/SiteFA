@@ -57,22 +57,22 @@ $total = mysqli_num_rows($dados);
   <form action="" class="ls-form ls-form-text ls-form-horizontal ls-form-disable" data-ls-module="form">
   <label class="ls-label col-md-3">
       <b class="ls-label-text">Autor</b>      
-      <input type="text" name="" id="autor" value=<?=$linha['autor']?>>
+      <input type="text" name="" id="autor" value="<?=$linha['autor']?>">
     </label>
 
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Destinatário</b>      
-      <input type="text" name="" id="destinatario" value=<?=$linha['destinatario']?> >
+      <input type="text" name="" id="destinatario" value="<?=$linha['destinatario']?>" >
     </label>
 
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Assunto</b>      
-      <input type="text" name="" id="destinatario" value=<?=$linha['assunto']?> >
+      <input type="text" name="" id="destinatario" value="<?=$linha['assunto']?>" >
     </label>
 
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Conteúdo</b>      
-      <input type="text" name="" id="destinatario" value=<?=$linha['conteudo']?> >
+      <input type="text" name="" id="destinatario" value="<?=$linha['conteudo']?>" >
     </label>
 
     <!--<label class="ls-label col-md-3">

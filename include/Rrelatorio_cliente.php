@@ -2,8 +2,6 @@
 
 include "conn.php";
 
-$nome = $_SESSION['nome'];
-
 // cria a instrução SQL que vai selecionar os dados
 if ($_SESSION['tipoCliente'] == 1 or $_SESSION['tipoCliente'] == 2){
 
@@ -13,7 +11,10 @@ if ($_SESSION['tipoCliente'] == 1 or $_SESSION['tipoCliente'] == 2){
 
 if ($_SESSION['tipoCliente'] == 3 or $_SESSION['tipoCliente'] == 4){
 
-    $query = sprintf("SELECT  * FROM relatoriocliente WHERE destinatario = '$nome' ");
+    $nome = $_SESSION['setor'];
+    $pasta = $_POST['pastas'];
+
+    $query = sprintf("SELECT  * FROM relatoriocliente WHERE setor = '$nome' AND nome_pasta = '$pasta' ");
 
 }
 // executa a query

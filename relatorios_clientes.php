@@ -111,7 +111,7 @@ $(document).ready(function() {
   
     <tr>
       <th class="ls-data-descending">Autor</th>
-      <th class="hidden-xs ls-data-descending">Destinatario</th>
+      <th class="hidden-xs ls-data-descending">Assunto</th>
       <th class="hidden-xs ls-data-descending">Data de Envio</th>
       <th class="ls-data-descending">Ações</th>
 
@@ -132,12 +132,30 @@ $(document).ready(function() {
       ?>
 
       <td class="hidden-xs"><?=$linha['autor']?></td>
-      <td class="hidden-xs"><?=$linha['destinatario']?></td>
+      <td class="hidden-xs"><?=$linha['assunto']?></td>
       <td class="hidden-xs"><?=date("d/m/Y",strtotime(str_replace('-','/',$linha["dataEnvio"])));?></td>
       <td>
 
         
         
+
+        <form action="ver_arquivos.php" method="POST" enctype="multiparty/form-data">
+        <input type="hidden" name="idRelatorioCliente" id="idRelatorioCliente" value=<?=$linha['idRelatorioCliente']?>>
+        <input type="hidden" name="load" id="load" value="C">
+        <button type="submit" class="ls-btn ls-ico-docs espacobtn" title="Ver arquivos"></button>
+        </form>
+
+        <?php
+        if ($_SESSION['tipoCliente'] == 3 or $_SESSION['tipoCliente'] == 4){
+        ?>
+
+        <form action="editar_relatorio_cliente.php" method="POST" enctype="multiparty/form-data">
+        <input type="hidden" name="idRelatorioCliente" id="idRelatorioCliente" value=<?=$linha['idRelatorioCliente']?>>
+        <button type="submit" class="ls-btn ls-ico-pencil espacobtn" title="Mudar Pasta"></button>
+        </form>
+
+        <?php } ?>
+
 
         <form action="Visualizar_relatorio_cliente.php" method="POST" enctype="multiparty/form-data">
         <input type="hidden" name="idRelatorioCliente" id="idRelatorioCliente" value=<?=$linha['idRelatorioCliente']?>>

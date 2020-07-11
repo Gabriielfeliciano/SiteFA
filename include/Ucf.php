@@ -12,9 +12,6 @@ $id2 = $_SESSION['idLogin'];
     $telefone= $_POST["telefone"];
     $sexo = $_POST["sexo"];
     $end = $_POST["endereco"];
-    $num = $_POST["numero"];
-    $comp = $_POST["complemento"];
-    $end = $end . " " . $num . " - " . $comp;
     //$password = crypt($password, $hashF_and_text);
     $query = ("UPDATE clientefisica SET nome = '$nome', sobrenome = '$sobrenome', dataNascimento = '$dataNasc', sexo = '$sexo',endereco = '$end',cpf = '$cpf',telefone = '$telefone' WHERE id = '$id' ");
 

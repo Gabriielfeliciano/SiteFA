@@ -12,6 +12,7 @@ include 'include/menu.php';
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Insira aqui a descrição da página.">
+    <link rel="stylesheet" href="css/cor.css">
     <link href="http://assets.locaweb.com.br/locastyle/3.10.1/stylesheets/locastyle.css" rel="stylesheet" type="text/css">
     <link rel="icon" sizes="192x192" href="/locawebstyle/assets/images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="/locawebstyle/assets/images/ico-boilerplate.png">
@@ -83,11 +84,24 @@ include 'include/menu.php';
     <label class="ls-label col-md-2">
       <b class="ls-label-text">Telefone</b>
       <input type="text" id="telefone" name="telefone" placeholder="(99) 99999-9999" >
-    </label>
-
-     
+    </label> 
     
   </fieldset> 
+
+  <br>
+
+    <header class="ls-info-header">
+    <h2 class="ls-title-3 ls-ico-folder-open">Adicionar Pastas</h2>
+    </header>
+
+    <fieldset>
+      <div id="formulario" class="formulario">
+        <div class= "form-group-created">
+        <input type="text" name="pastas[]" placeholder="Nova Pasta" >
+        <button type="button" class="ls-btn-success ls-ico-plus submarg" id="add-campo"></button>
+        </div>
+      </div>
+    </fieldset> 
 
   
   <button class="ls-btn" type="submit">Cadastrar</button>
@@ -97,6 +111,24 @@ include 'include/menu.php';
     <a href="clientejuridico.php"><button class="ls-btn ls-ico-chevron-left">Voltar</button></a>
   </div>
     </main>
+
+
+
+    <script>
+      var cont = 1;
+      //https://api.jquery.com/click/
+      $('#add-campo').click(function () {
+          cont++;
+          //https://api.jquery.com/append/
+          $('#formulario').append('<div class="form-group-created" id="campo' + cont + '"><input type="text" name="pastas[]" placeholder="Nome da Pasta"> <button type="button" id="' + cont + '" class="ls-btn-primary-danger ls-ico-minus submarg btn-apagar"></button></div>');
+      });
+
+      $('form').on('click', '.btn-apagar', function () {
+          var button_id = $(this).attr("id");
+          $('#campo' + button_id + '').remove();
+      });
+
+    </script>
 
    
 
