@@ -61,7 +61,7 @@ $total = mysqli_num_rows($dados);
   <form action="" class="ls-form ls-form-text ls-form ls-form-disable" data-ls-module="form">
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Nome da Empresa:</b>      
-      <input type="text" name="" id="nome" value=<?=$linha['nomeEmpresa']?>>
+      <input type="text" name="" id="nome" value="<?=$linha['nomeEmpresa']?>">
     </label>
 
     <label class="ls-label col-md-3">

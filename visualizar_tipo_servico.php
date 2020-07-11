@@ -64,17 +64,17 @@ $total = mysqli_num_rows($dados);
   <form action="" class="ls-form ls-form-text ls-form ls-form-disable" data-ls-module="form">
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Serviço</b>      
-      <input type="text" name="" id="servico" value=<?=$linha['servico']?>>
+      <input type="text" name="" id="servico" value="<?=$linha['servico']?>">
     </label>
 
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Fornecedor</b>      
-      <input type="text" name="" id="data" value=<?=$linha['fornecedor']?>>
+      <input type="text" name="" id="data" value="<?=$linha['fornecedor']?>">
     </label>
 
     <label class="ls-label col-md-6">
       <b class="ls-label-text">Descrição</b>
-      <input type="text" id="descricao" name="" value=<?=$linha['descricao']?>>
+      <input type="text" id="descricao" name="" value="<?=$linha['descricao']?>">
     </label>
 
     <label class="ls-label col-md-2">

@@ -38,7 +38,8 @@ include 'include/menu.php';
     <label class="ls-label col-md-4">
       <b class="ls-label-text">Destinatario:</b>
       <div class="ls-custom-select">
-      <select class="ls-select" name="destinatario">
+      <select class="ls-select" name="id" id="id">
+        <option value="">Cliente</option>
         <?php
         
     include "include/ver_cf.php";
@@ -46,9 +47,10 @@ include 'include/menu.php';
     if($total > 0) {
     // inicia o loop que vai mostrar todos os dados
     do {
+
     ?>
 
-    <option value="<?php echo $linha['nome'] ?>"><?php echo $linha['nome'] ?></option>
+    <option value="<?php echo $linha['id']."F" ?>"><?php echo $linha['nome'] ?></option>
 
     <?php
     // finaliza o loop que vai mostrar os dados
@@ -65,9 +67,10 @@ include 'include/menu.php';
   if($total > 0) {
   // inicia o loop que vai mostrar todos os dados
   do {
+
   ?>
 
-  <option value="<?php echo $linha['razaoSocial'] ?>"><?php echo $linha['razaoSocial'] ?></option>
+  <option value="<?php echo $linha['id']."J" ?>"><?php echo $linha['razaoSocial'] ?></option>
 
   <?php
   // finaliza o loop que vai mostrar os dados
@@ -80,20 +83,29 @@ include 'include/menu.php';
       </div>
     </label>  
 
+    <label class="ls-label col-md-4">
+      <b class="ls-label-text">Pastas:</b>
+      <div class="ls-custom-select">
+        <select name="id_pasta" id="id_pasta">
+          <option value="">Escolha a Pasta</option>
+        </select>
+      </div>
+    </label>
+
     <label class="ls-label col-md-6">
       <b class="ls-label-text">Assunto:</b>      
       <input type="text" name="assunto" id="autor" placeholder="Assunto..."  required >
     </label>
 
     <label class="ls-label col-md-10">
-      <b class="ls-label-text">Relatório:</b>
+      <b class="ls-label-text">Descricao:</b>
       <textarea placeholder="Situação do Relatório..." name="conteudo"></textarea>
     </label>
 
-    <!-- <label class="ls-label col-md-2">
+    <label class="ls-label col-md-2">
       <b class="ls-label-text">Anexos:</b>      
-      <input type="file" name="arquivos[]" class="ls-btn" multiple>
-    </label> -->
+      <input type="file" name="imagem[]" class="ls-btn" multiple>
+    </label>
 
   </fieldset> 
 
@@ -105,6 +117,31 @@ include 'include/menu.php';
     <a href="relatorios_func.php"><button class="ls-btn ls-ico-chevron-left">Voltar</button></a>
   </div>
     </main>
+
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+		$(function(){
+			$('#id').change(function(){
+				if( $(this).val() ) {
+					$('#id_pasta').hide();
+					//$('.carregando').show();
+					$.getJSON('include/listarpastas.php?search=',{id: $(this).val(), ajax: 'true'}, function(j){
+						var options = '<option value="">Escolha a Pasta</option>';	
+						for (var i = 0; i < j.length; i++) {
+							options += '<option value="' + j[i].nome_pasta + '">' + j[i].nome_pasta + '</option>';
+						}	
+						$('#id_pasta').html(options).show();
+						//$('.carregando').hide();
+					});
+				} else {
+					$('#id_pasta').html('<option value="">– Escolha a Pasta –</option>');
+				}
+			});
+		});
+		</script>
 
    
 

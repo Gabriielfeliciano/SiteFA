@@ -102,8 +102,8 @@ var element = document.getElementById('element');
     </div>
     <div class="ls-modal-body">
     <label class="ls-label col-md">
-     <form method="POST" action="disparo/envio_senha.php" id="form_recupera" onsubmit="recuperar_senha(); return false;" name="form_recupera" >
-       <input type="text" name="email_usuario" placeholder="Digite o email cadastrado">
+     <form method="POST" action="include/recuperarsenha.php" name="form_recupera" >
+       <input type="text" name="email" placeholder="Digite o email cadastrado">
        <input type="hidden" name="assunto" value="Recuperação de senha">
     
      </label>

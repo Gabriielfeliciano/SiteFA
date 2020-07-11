@@ -83,7 +83,7 @@ $total = mysqli_num_rows($dados);
 
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Endereço</b>      
-      <input type="text" name="endereco" id="endereco" value=<?=$linha['endereco']?> required >
+      <input type="text" name="endereco" id="endereco" value="<?=$linha['endereco']?>" required >
     </label>
 
     <label class="ls-label col-md-3">

@@ -74,12 +74,12 @@ $total = mysqli_num_rows($dados);
 
     <label class="ls-label col-md-6">
       <b class="ls-label-text">Serviço</b>
-      <input type="text" id="servico" name="" value=<?=$linha['servico']?>>
+      <input type="text" id="servico" name="" value= "<?=$linha['servico'] ?>">
     </label>
 
     <label class="ls-label col-md-2">
       <b class="ls-label-text">Necessidade</b>
-      <input type="text" id="necessidade" name="" value=<?=$linha['necessidade']?> >
+      <input type="text" id="necessidade" name="" value = "<?=$linha['necessidade']?>">
     </label>
 
     <label class="ls-label col-md-2">

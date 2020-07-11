@@ -2,6 +2,7 @@
 include 'include/islogged.php';
 include 'include/painel.php';
 include 'include/menu.php';
+$hoje = date('d/m/Y');
 ?> 
 <!DOCTYPE html>
 <html class="ls-theme-indigo">
@@ -15,6 +16,7 @@ include 'include/menu.php';
     <link href="http://assets.locaweb.com.br/locastyle/3.10.1/stylesheets/locastyle.css" rel="stylesheet" type="text/css">
     <link rel="icon" sizes="192x192" href="/locawebstyle/assets/images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="/locawebstyle/assets/images/ico-boilerplate.png">
+    <link rel="stylesheet" href="css/cor.css">
   </head>
   <body>
   
@@ -23,125 +25,176 @@ include 'include/menu.php';
 
 
     <main class="ls-main ">
-      <div class="container-fluid">
-      <div class="ls-box ls-board-box">
+
+    <!-- <div class="ls-box ls-board-box">
+  <header class="ls-info-header">
+    <h2 class="ls-title-3 ls-ico-dashboard">Painel de controle</h2>
+  </header> -->
+
+<!-- <div class="col-sm-5">  
+  <div class="ls-box">
+      <span class="ls-ico-alone ls-ico-panel-emkt"></span>
+    <div class="col-md-9">
+        <h3><strong>Orçamentos</strong></h3>
+        <a href="#" class="ls-btn-success ls-btn">Visualizar</a>
+        <hr>
+    </div>
+   </div>
+</div> -->
+
+  <!-- <div class="ls-box ls-md-space">
+      <div class="col-md-3">
+      <span class="ls-ico-alone ls-ico-panel-emkt"></span>
+      </div>
+      <div class="col-md-8">
+          <h3 class="ls-title-4"><strong>Orçamentos</strong></h3>
+          <a href="#" class="ls-btn-success ls-btn">Visualizar</a>
+        <hr>
+      </div>
+  </div> -->
+
+
+<!-- </div> -->
+
+<div class="ls-box ls-board-box">
   <header class="ls-info-header">
     <h2 class="ls-title-3 ls-ico-dashboard">Painel de controle</h2>
   </header>
 
-<?php if ($_SESSION['tipoCliente'] == 1 or $_SESSION['tipoCliente'] == 2){ ?>
+  <?php if ($_SESSION['tipoCliente'] == 1 or $_SESSION['tipoCliente'] == 2){ ?>
 
-<div id="sending-stats" class="row">
-  <div class="col-sm-3">
-    <div class="ls-box">
-      <div class="ls-box-head">
-        <h6 class="ls-title-4">Relátorios recebidos </h6>
-      </div>
-      <div class="ls-box-body">
-        <span class="ls-board-data">
+    <div class="col-sm-6 col-md-6">
+      <div class="ls-box back">
+      <strong class="ls-ico-lamp"></strong>
+        <div class="ls-box-head">
+          <h3 class="ls-title-4">Meus Serviços</h3>
+        </div>
+        <div class="ls-box-body">
           <strong>
+          <?php
+            include "include/contador_servicos.php";              
+            echo $total;
+          ?>
+          </strong>
+          <hr>
+        </div>
+        <div class="ls-box-footer">
+          <a href="#" class="ls-btn-primary-test btn">Visualizar</a>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+      <div class="ls-box back">
+        <strong class="ls-ico-chart-bar-up"></strong>
+          <div class="ls-box-head">
+            <h3 class="ls-title-4">Relátorios recebidos</h3>
+          </div>
+          <div class="ls-box-body">
+            <strong>
             <?php
               include "include/contador_relatorios.php";              
               echo $total;
             ?>
-          </strong>
-        </span>
-      </div>
-    </div>
-</div>
-
-<?php } ?>
-
-<?php if ($_SESSION['tipoCliente'] == 3 or $_SESSION['tipoCliente'] == 4){ ?>
-
-  <div id="sending-stats" class="row">
-    <div class="col-sm-3">
-      <div class="ls-box">
-        <div class="ls-box-head">
-          <h6 class="ls-title-4">Orçamentos </h6>
-        </div>
-        <div class="ls-box-body">
-          <span class="ls-board-data">
-            <strong>
-              <?php
-                include "include/ver_orc.php";              
-                echo $total;
-              ?>
             </strong>
-          </span>
+            <hr>
+          </div>
+          <div class="ls-box-footer">
+            <a href="index_relatorio.php" class="ls-btn-primary-test btn">Visualizar</a>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
 
   <?php } ?>
 
-    <div class="col-sm-3">
-      <div class="ls-box">
+  <?php if ($_SESSION['tipoCliente'] == 3 or $_SESSION['tipoCliente'] == 4){ ?>
+
+    <div class="col-sm-6 col-md-4">
+      <div class="ls-box back">
+      <strong class="ls-ico-panel-emkt"></strong>
         <div class="ls-box-head">
-          <h6 class="ls-title-4">Serviços</h6>
+          <h3 class="ls-title-4">Orçamentos</h3>
         </div>
         <div class="ls-box-body">
-          <span class="ls-board-data">
-            <strong>
-              <?php
-                include "include/contador_servicos.php";              
-                echo $total;
-              ?>
-            </strong>
-          </span>
+          <strong>
+          <?php
+            include "include/ver_orc.php";              
+            echo $total;
+          ?>
+          </strong>
+          <hr>
+        </div>
+        <div class="ls-box-footer">
+          <a href="orcamento.php" class="ls-btn-primary-test btn">Visualizar</a>
+          <br>
         </div>
       </div>
     </div>
 
-    <?php if ($_SESSION['tipoCliente'] == 3 or $_SESSION['tipoCliente'] == 4){ ?>
-
-    <div class="col-sm-3">
-      <div class="ls-box">
-        <div class="ls-box-head">
-          <h6 class="ls-title-4">Relatórios</h6>
-        </div>
-        <div class="ls-box-body">
-          <span class="ls-board-data">
+    <div class="col-sm-6 col-md-4">
+      <div class="ls-box back">
+        <strong class="ls-ico-chart-bar-up"></strong>
+          <div class="ls-box-head">
+            <h3 class="ls-title-4">Relátorios recebidos</h3>
+          </div>
+          <div class="ls-box-body">
             <strong>
-              <?php
-                include "include/contador_relatorios.php";              
-                echo $total;
-              ?>
+            <?php
+              include "include/contador_relatorios.php";              
+              echo $total;
+            ?>
             </strong>
-          </span>
+            <hr>
+          </div>
+          <div class="ls-box-footer">
+            <a href="index_relatorio.php" class="ls-btn-primary-test btn">Visualizar</a>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-sm-3">
-      <div class="ls-box">
-        <div class="ls-box-head">
-          <h6 class="ls-title-4">Clientes</h6>
-        </div>
-        <div class="ls-box-body">
-          <span class="ls-board-data">
+      <div class="col-sm-6 col-md-4 paddd">
+      <div class="ls-box back">
+        <strong class="ls-ico-users"></strong>
+          <div class="ls-box-head">
+            <h3 class="ls-title-4">Clientes</h3>
+          </div>
+          <div class="ls-box-body">
             <strong>
-              <?php
-                include "include/contador_clientes.php";              
-                echo $total;
-              ?>
+            <?php
+              include "include/contador_clientes.php";              
+              echo $total;
+            ?>
             </strong>
-          </span>
+            <hr>
+          </div>
+          <div class="ls-box-footer">
+            <div data-ls-module="dropdown" class="ls-dropdown">
+              <a href="#" class="ls-btn-primary-test btn2">Visualizar</a>
+
+              <ul class="ls-dropdown-nav">
+                <li><a href="clientefisico.php">Físico</a></li>
+                <li><a href="clientejuridico.php">Jurídico</a></li>
+              </ul>
+
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <?php } ?>
+      <?php } ?>
+
+      
+    </div>
 
   </div>
-  <hr class="ls-no-border">
-  <div id="panel-charts-2" class="ls-clear-both"></div>
 </div>
 
 
 
 
-      </div>
     </main>
 
    

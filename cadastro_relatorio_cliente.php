@@ -36,21 +36,20 @@ include 'include/menu.php';
   <fieldset>
 
 
-    <label class="ls-label col-md-4">
-      <b class="ls-label-text">Destinatario:</b>
+  <label class="ls-label col-md-6">
+      <b class="ls-label-text">Empresa:</b>
       <div class="ls-custom-select">
-      <select class="ls-select" name="destinatario">
-      
+      <select class="ls-select" name="empresa">
     <?php
 
-    include "include/ver_adm.php";
-    
+    include "include/Rempresa.php";
+
     if($total > 0) {
     // inicia o loop que vai mostrar todos os dados
     do {
     ?>
 
-    <option value="<?php echo $linha['nomeEmpresa'] ?>"><?php echo $linha['nomeEmpresa'] ?></option>
+    <option value="<?php echo $linha['nome'] ?>"><?php echo $linha['nome'] ?></option>
 
     <?php
     // finaliza o loop que vai mostrar os dados
@@ -60,42 +59,51 @@ include 'include/menu.php';
     }
     ?>
 
-<?php 
-
-  include "include/ver_funcionario.php";
-
-  if($total > 0) {
-  // inicia o loop que vai mostrar todos os dados
-  do {
-  ?>
-
-  <option value="<?php echo $linha['nome'] ?>"><?php echo $linha['nome'] ?></option>
-
-  <?php
-  // finaliza o loop que vai mostrar os dados
-  }while($linha = mysqli_fetch_assoc($dados));
-
-  // fim do if 
-  }
-?>
-      </select>
+    </select>
       </div>
-    </label>  
+    </label>
+
+    <label class="ls-label col-md-6">
+      <b class="ls-label-text">Setor:</b>
+      <div class="ls-custom-select">
+      <select class="ls-select" name="setor">
+    <?php
+
+    include "include/Rsetor.php";
+
+    if($total > 0) {
+    // inicia o loop que vai mostrar todos os dados
+    do {
+    ?>
+
+    <option value="<?php echo $linha['setor'] ?>"><?php echo $linha['setor'] ?></option>
+
+    <?php
+    // finaliza o loop que vai mostrar os dados
+    }while($linha = mysqli_fetch_assoc($dados));
+
+    // fim do if 
+    }
+    ?>
+
+    </select>
+      </div>
+    </label>
 
     <label class="ls-label col-md-6">
       <b class="ls-label-text">Assunto:</b>      
-      <input type="text" name="assunto" id="autor" placeholder="Assunto..."  required >
+      <input type="text" name="assunto" placeholder="Assunto..."  required >
     </label>
 
-    <label class="ls-label col-md-10">
-      <b class="ls-label-text">Relatório:</b>
-      <textarea placeholder="Situação do Relatório..." name="conteudo"></textarea>
+    <label class="ls-label col-md-6">
+      <b class="ls-label-text">Descricao:</b>
+      <textarea placeholder="Situação do Relatório..." name="descricao"></textarea>
     </label>
 
-    <!-- <label class="ls-label col-md-2">
+    <label class="ls-label col-md-2">
       <b class="ls-label-text">Anexos:</b>      
-      <input type="file" name="arquivos[]" class="ls-btn" multiple>
-    </label> -->
+      <input type="file" name="imagem[]" id="imagem" class="ls-btn" multiple>
+    </label>
 
   </fieldset> 
 

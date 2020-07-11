@@ -139,6 +139,23 @@ $(document).ready(function() {
         
         
 
+        <form action="ver_arquivos.php" method="POST" enctype="multiparty/form-data">
+        <input type="hidden" name="idRelatoriofunc" id="idRelatoriofunc" value=<?=$linha['idRelatoriofunc']?>>
+        <input type="hidden" name="load" id="load" value="F">
+        <button type="submit" class="ls-btn ls-ico-docs espacobtn" title="Ver arquivos"></button>
+        </form>
+
+        <?php
+        if ($_SESSION['tipoCliente'] == 1 or $_SESSION['tipoCliente'] == 2){
+        ?>
+
+        <form action="editar_relatorio_func.php" method="POST" enctype="multiparty/form-data">
+        <input type="hidden" name="idRelatoriofunc" id="idRelatoriofunc" value=<?=$linha['idRelatoriofunc']?>>
+        <button type="submit" class="ls-btn ls-ico-pencil espacobtn" title="Mudar Pasta"></button>
+        </form>
+
+        <?php } ?>
+
         <form action="visualizar_relatorio_func.php" method="POST" enctype="multiparty/form-data">
         <input type="hidden" name="idRelatoriofunc" id="idRelatoriofunc" value=<?=$linha['idRelatoriofunc']?>>
         <button type="submit" class="ls-btn ls-ico-eye espacobtn" title="Ver"></button>

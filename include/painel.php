@@ -60,6 +60,7 @@ if ($_SESSION['tipoCliente'] == 1){
   <!-- Nome do produto/marca com sidebar -->
     <h1 class="ls-brand-name">
       <a href="dashboard.php">
+        <!--<img src="img/03.png" alt="">-->
         <small>Feliciano associados</small>
         Área do <?php echo $quem; ?>
       </a>

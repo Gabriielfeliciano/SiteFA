@@ -46,6 +46,7 @@ session_start();
         
             $db_nome = $row['nome'];
             $db_id = $row['idFuncionario'];
+            $db_setor = $row['setor'];
     
         }
     } else if ($idCliente == 4){
@@ -55,6 +56,7 @@ session_start();
         
             $db_id = $row['idAdministrador'];
             $db_nome = $row['nomeEmpresa'];
+            $db_setor = $row['setor'];
     
         }
     }
@@ -83,12 +85,14 @@ session_start();
 
             $_SESSION['nome'] = $db_nome;
             $_SESSION['idFunc'] = $db_id;
+            $_SESSION['setor'] = $db_setor;
             header("Location: ../funcionarios.php");
 
         } else if ($idCliente == 4){
 
             $_SESSION['idAdministrador'] = $db_id;
             $_SESSION['nome'] = $db_nome;
+            $_SESSION['setor'] = $db_setor;
             header("Location: ../adm.php");
         }
         
